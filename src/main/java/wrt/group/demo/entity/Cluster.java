@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
+@Getter @Setter
 public class Cluster {
+
 
     @Id
     @GeneratedValue
