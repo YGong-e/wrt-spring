@@ -26,4 +26,6 @@ public class Cluster {
     private String clusterEquip;
     private List<String> polygonList;
     private String indexUSM;
+
+    private String clusterName;
 }

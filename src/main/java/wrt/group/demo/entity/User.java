@@ -15,6 +15,6 @@ public class User {
     @GeneratedValue
     @Column(name = "USER_ID")
     private Long id;
-    private String name;
-    private String userId;
+    private String username;
+    private String companyId;
 }

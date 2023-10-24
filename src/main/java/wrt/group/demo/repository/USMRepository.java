@@ -14,4 +14,6 @@ public class USMRepository {
     EntityManager em = emf.createEntityManager();
     EntityTransaction tx = em.getTransaction();
 
+
+
 }
