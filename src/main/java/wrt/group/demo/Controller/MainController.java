@@ -7,9 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import wrt.group.demo.dto.FilterDto;
+import wrt.group.demo.dto.UserDto;
 import wrt.group.demo.service.UserService;
 
 import javax.crypto.BadPaddingException;
@@ -19,7 +18,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.util.logging.Filter;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -30,11 +28,11 @@ public class MainController {
 
         private UserService userService;
 
-    @PostMapping(value = "/filter", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> registFilter(@Valid @RequestBody FilterDto filterDto) throws NoSuchPaddingException, IllegalBlockSizeException, UnsupportedEncodingException, NoSuchAlgorithmException, BadPaddingException, InvalidKeySpecException, InvalidKeyException {
-//        userService.register(filterDto);
+        @PostMapping(value = "/filter", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+        public ResponseEntity<String> registFilter(@Valid @RequestBody UserDto userDto) throws NoSuchPaddingException, IllegalBlockSizeException, UnsupportedEncodingException, NoSuchAlgorithmException, BadPaddingException, InvalidKeySpecException, InvalidKeyException {
+         userService.register(userDto);
 
-        return new ResponseEntity("success", HttpStatus.OK);
-    }
+            return new ResponseEntity("success", HttpStatus.OK);
+        }
 
 }
