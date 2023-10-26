@@ -10,9 +10,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class USMRepository {
 
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("wrt");
-    EntityManager em = emf.createEntityManager();
-    EntityTransaction tx = em.getTransaction();
+//    EntityManagerFactory emf = Persistence.createEntityManagerFactory("wrt");
+//    EntityManager em = emf.createEntityManager();
+//    EntityTransaction tx = em.getTransaction();
+//
+//    tx.begin()
 
 
 

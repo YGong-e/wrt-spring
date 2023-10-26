@@ -2,13 +2,12 @@ package wrt.group.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter @Setter
+@Getter
 public class Cluster {
 
 
@@ -19,10 +18,10 @@ public class Cluster {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
-    private User user;
+    private Users user;
 
     @OneToMany(mappedBy = "cluster")
-    private List<USM> usmList = new ArrayList<>();
+    private List<Bridge> bridegeList = new ArrayList<>();
     private String clusterEquip;
     private List<String> polygonList;
     private String indexUSM;

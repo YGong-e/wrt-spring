@@ -1,20 +1,12 @@
 package wrt.group.demo.dto;
 
-import lombok.*;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
+@Component
 @Data
-@RequiredArgsConstructor
 public class UserDto {
-
-    private final String username;
-
-    private final String companyId;
-
-    private final String clusterName;
-
-    private final List<Long> polygonList = new ArrayList<>();
-
+    private String username;
+    private String companyId;
 }

@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -15,9 +18,9 @@ public class USM {
     private Long id;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CLUSTER_ID")
-    private Cluster cluster;
+    @OneToMany(mappedBy = "usm")
+    private List<Bridge> bridegeList = new ArrayList<>();
+
     private Long gnbId;
     private String cuNetwork;
     private Long cuId;
