@@ -13,7 +13,7 @@ import java.util.List;
 public class USM {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "USM_ID")
     private Long id;
 
@@ -30,8 +30,8 @@ public class USM {
     private String duVer;
     private String duIp;
     private String userLabel;
-    private Long latitude;
-    private Long longitude;
+    private Float latitude;
+    private Float longitude;
     private Long cellId;
     private String tac;
     private Long pci;

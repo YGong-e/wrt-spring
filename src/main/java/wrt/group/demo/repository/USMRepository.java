@@ -1,21 +1,23 @@
 package wrt.group.demo.repository;
 
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import jakarta.persistence.*;
 import org.springframework.stereotype.Repository;
+import wrt.group.demo.dto.UserDto;
+import wrt.group.demo.entity.Users;
+
+import java.util.List;
 
 @Repository
 public class USMRepository {
 
-//    EntityManagerFactory emf = Persistence.createEntityManagerFactory("wrt");
-//    EntityManager em = emf.createEntityManager();
-//    EntityTransaction tx = em.getTransaction();
-//
-//    tx.begin()
+    @PersistenceContext
+    private EntityManager em;
 
+    public List<String> findUSMPolygon() {
+        return em.createQuery("select m.id, m.latitude, m.longitude from USM m", String.class)
+                .getResultList();
+    }
 
 
 }

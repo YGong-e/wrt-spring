@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import wrt.group.demo.dto.FilterDto;
+import wrt.group.demo.service.ClusterService;
 import wrt.group.demo.service.UserService;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -17,10 +18,12 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class MainController {
 
         private final UserService userService;
+        private final ClusterService clusterService;
         private final FilterDto filterDto;
 
-    public MainController(UserService userService, FilterDto filterDto) {
+    public MainController(UserService userService, ClusterService clusterService, FilterDto filterDto) {
         this.userService = userService;
+        this.clusterService = clusterService;
         this.filterDto = filterDto;
     }
 
@@ -29,6 +32,7 @@ public class MainController {
         public ResponseEntity<String> registFilter(@Valid @RequestBody FilterDto filterDto) {
             System.out.println("filterDto = " + filterDto);
          userService.register(filterDto);
+         clusterService.register(filterDto);
 
             return new ResponseEntity("success", HttpStatus.OK);
         }

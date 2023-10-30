@@ -1,6 +1,6 @@
 package wrt.group.demo.dto;
 
-import lombok.*;
+import lombok.Data;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.List;
 
 @Component
 @Data
-public class FilterDto {
+public class ClusterDto {
 
     private String username;
 
@@ -16,6 +16,5 @@ public class FilterDto {
 
     private String clusterName;
 
-    private List<Object> polygonList = new ArrayList<>();
-
+    private List<Long> polygonList = new ArrayList<>();
 }
