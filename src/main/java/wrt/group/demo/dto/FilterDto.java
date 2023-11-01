@@ -2,6 +2,7 @@ package wrt.group.demo.dto;
 
 import lombok.*;
 import org.springframework.stereotype.Component;
+import wrt.group.demo.model.PolygonMapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,6 @@ public class FilterDto {
 
     private String clusterName;
 
-    private List<Object> polygonList = new ArrayList<>();
+    private List<PolygonMapper> polygonList = new ArrayList<>();
 
 }

@@ -2,6 +2,7 @@ package wrt.group.demo.dto;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;
+import wrt.group.demo.entity.PolygonPoint;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,5 +17,5 @@ public class ClusterDto {
 
     private String clusterName;
 
-    private List<Long> polygonList = new ArrayList<>();
+    private List<PolygonPointDto> polygonList = new ArrayList<>();
 }

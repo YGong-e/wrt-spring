@@ -32,8 +32,8 @@ public class UserService {
         // 이미 user가 존재할 경우 사용자 추가 X
         if(companyIdList.contains(companyId)) {
             System.out.println("do not update users entity");
-
         }
+
         else {
 //            filterDto.getPolygonList();
             userDto.setUsername(username);

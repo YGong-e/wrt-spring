@@ -17,10 +17,6 @@ public class USM {
     @Column(name = "USM_ID")
     private Long id;
 
-
-    @OneToMany(mappedBy = "usm")
-    private List<Bridge> bridegeList = new ArrayList<>();
-
     private Long gnbId;
     private String cuNetwork;
     private Long cuId;

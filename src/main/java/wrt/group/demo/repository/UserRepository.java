@@ -50,8 +50,16 @@ public class UserRepository {
 
             System.out.println("userIndex = " + userIndex);
              return userIndex;
-
-
         }
+
+    public Users findByUsername(String companyId) {
+
+        String jpql = "select m from Users m where m.companyId = :companyId";
+
+        return em.createQuery(jpql, Users.class)
+                .setParameter("companyId", companyId)
+                .getSingleResult();
+
+    }
 
 }

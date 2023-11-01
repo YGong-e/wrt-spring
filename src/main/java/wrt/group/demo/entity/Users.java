@@ -14,9 +14,15 @@ public class Users {
     private String username;
     private String companyId;
 
+    public Users() {
+
+    }
+
     @Builder
     public Users(String username, String companyId) {
         this.username = username;
         this.companyId = companyId;
     }
+
+
 }
