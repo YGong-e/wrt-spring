@@ -7,6 +7,7 @@ import wrt.group.demo.dto.ClusterDto;
 import wrt.group.demo.dto.PolygonPointDto;
 import wrt.group.demo.entity.Cluster;
 import wrt.group.demo.entity.PolygonPoint;
+import wrt.group.demo.entity.USM;
 import wrt.group.demo.entity.Users;
 
 import java.util.List;
@@ -14,12 +15,9 @@ import java.util.stream.Collectors;
 
 @Repository
 public class ClusterRepository {
-
     @PersistenceContext
     private EntityManager em;
-
     private UserRepository userRepository;
-
     public ClusterRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -51,4 +49,24 @@ public class ClusterRepository {
 
         em.persist(cluster);
     }
+
+    public List<Long> findLastClusterId () {
+
+        String jpqlGetId = "SELECT c.id FROM Cluster c ORDER BY c.id DESC";
+
+        Long getId = em.createQuery(jpqlGetId, Long.class)
+                .setMaxResults(1)
+                .getSingleResult();
+
+        String jpqlUSMList = "SELECT p.usmId FROM Cluster c join c.polygonList p WHERE c.id = :getId";
+
+        return em.createQuery(jpqlUSMList, Long.class)
+                        .setParameter("getId", getId)
+                        .getResultList();
+
+
+
+
+    }
+
 }
